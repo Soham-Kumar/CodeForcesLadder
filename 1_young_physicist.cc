@@ -1,8 +1,10 @@
 #include<iostream>
+#include<chrono>
 using namespace std;
  
 int main()
 {
+    auto start = chrono::steady_clock::now();
     int n, x, y, z, sum1=0, sum2=0, sum3=0;
     cin>>n;
  
@@ -18,4 +20,10 @@ int main()
         cout<<"YES"<<endl;
     else
         cout<<"NO"<<endl;
+    
+    cout <<endl;
+    auto end = chrono::steady_clock::now();
+    auto diff = end - start;
+    cout << chrono::duration<double, milli>(diff).count() << " ms" << endl;
+
 }
